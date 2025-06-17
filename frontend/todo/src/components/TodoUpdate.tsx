@@ -18,7 +18,7 @@ const TodoUpdate:React.FC<TodoUpdateProps> = ({todo , onClose, onUpdate}) => {
     const [task, setTask]=useState(todo.task);
     const handleUpdate =async ()=>{
         try {
-            await axios.put(`http://localhost:5000/api/todo/${todo._id}`, {task,});
+            await axios.put(`https://todobackend-omega-lemon.vercel.app/api/todo/${todo._id}`, {task,});
             onUpdate();
             onClose();
             
