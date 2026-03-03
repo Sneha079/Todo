@@ -9,7 +9,7 @@ const App = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
    const handleData = async () => {
       try {
-        const data = await axios.get("https://todobackend-omega-lemon.vercel.app/api/todo");
+        const data = await axios.get("http://localhost:5000/api/todo");
         setTodos(data.data.getTodo);
 
       } catch (error) {
@@ -29,7 +29,7 @@ const App = () => {
 
 
     try {
-      const response = await axios.post("https://todobackend-omega-lemon.vercel.app/api/todo", {
+      const response = await axios.post("http://localhost:5000/api/todo", {
         "task": text,
       });
 
@@ -45,8 +45,8 @@ const App = () => {
   }
     const handleDelete = async (id: string) => {
       try {
-        const res = await axios.delete(`https://todobackend-omega-lemon.vercel.app/api/todo/${id}`);
-        console.log(res);
+        const res = await axios.delete(`http://localhost:5000/api/todo/${id}`);
+        // console.log(res);
 
 
         setTodos((prev) => prev.filter((todo) => todo._id !== id));

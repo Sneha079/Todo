@@ -38,7 +38,7 @@ const deleteTodo = async (req, res) => {
 
         const { id } = req.params;
         const data = await Todo.findByIdAndDelete(id);
-        console.log(id);
+
         res.status(201).json({ data })
     } catch (error) {
         console.log(error);
