@@ -9,7 +9,7 @@ const App = () => {
   const [todos, setTodos] = useState<Todo[]>([]);
    const handleData = async () => {
       try {
-        const data = await axios.get("http://localhost:5000/api/todo");
+        const data = await axios.get("https://todo-backend-8bnb.onrender.com/api/todo");
         setTodos(data.data.getTodo);
 
       } catch (error) {
@@ -29,7 +29,7 @@ const App = () => {
 
 
     try {
-      const response = await axios.post("http://localhost:5000/api/todo", {
+      const response = await axios.post("https://todo-backend-8bnb.onrender.com/api/todo", {
         "task": text,
       });
 
@@ -45,7 +45,7 @@ const App = () => {
   }
     const handleDelete = async (id: string) => {
       try {
-        const res = await axios.delete(`http://localhost:5000/api/todo/${id}`);
+        const res = await axios.delete(`https://todo-backend-8bnb.onrender.com/api/todo/${id}`);
         // console.log(res);
 
 
