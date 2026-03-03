@@ -45,8 +45,7 @@ const App = () => {
   }
     const handleDelete = async (id: string) => {
       try {
-        const res = await axios.delete(`https://todo-backend-8bnb.onrender.com/api/todo/${id}`);
-        // console.log(res);
+        await axios.delete(`https://todo-backend-8bnb.onrender.com/api/todo/${id}`);
 
 
         setTodos((prev) => prev.filter((todo) => todo._id !== id));
